@@ -1,4 +1,6 @@
 # Deploying an ELK Stack 
+![ELK](./images/ELK.png) 
+[source](https://howtodoinjava.com/)
 
 ### What is ELK?
 - ElasticSearch 
