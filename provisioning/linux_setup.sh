@@ -13,4 +13,10 @@ curl http://localhost:9200/
 sudo apt-get update && sudo apt-get install kibana
 
 # start the service 
-sudo serive kibana start 
+sudo systemctl start kibana.service
+# can also use `sudo service kibana start`
+# check if setup was successful 
+
+# curl isn't working, can use this to check if it was successfully started
+journalctl -u kibana.service 
+
