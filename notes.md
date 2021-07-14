@@ -1,5 +1,5 @@
 # Requirements:
-1. Deploy an ELK stack in a Linux system
+1. Deploy an ELK stack in a Linux system 
 2. A reasonable volume of logs appear on Kibana
 
 ## Notes:
@@ -13,17 +13,20 @@ I'm not comfortable with ELK but the task is to **deploy** it. I don't need to k
     - using `&` at the end of the command will [run it in the background](https://www.maketecheasier.com/run-bash-commands-background-linux/), eliminating the need for multiple terminal instances. 
 - run elk locally and document steps for setup
     - steps on mac: 
-        - download zip files 
-        - unzip 
+        - download and unzip files
         - cd into kibana directory and `bin/kibana` and do the same for elasticsearch
         - **here I ran into some issues**:
-            - localhost not working (even though it has been fine for other projects)
+            - localhost not working (even though it has been fine for other projects, proxy might be causing the problem)
             - problems SSH into ec2 instance, going to try it from another computer as I think this one's firewall is blocking it.  
+            - Not sure why, but fixed now. can access from http://127.0.0.1:9200/, kibana can be accessed from http://127.0.0.1:5601/
     - going to try and run it straight from an ec2 instance: 
         - my aws account doesn't have default vpcs anymore, need to bring up an infrastructure before I can run anything. 
         - console is long & cumbersome, use terraform to bring up simple 1-tier architecture, public for now. 
             - note no instance is created from the terraform script, need to do this manually in console to create an ssh key for other laptop. 
-    - use commands.sh file to note and potentially automate any terminal commands
+        - succesfully created 1-tier architecture, created an instance manually through console and SSHed into it
+        - see `linux_setup.sh` for linux setup process 
+        - need to open port 5601 (kibana), 9200 (elasticsearch) and 5000 (logstash)
+        - after installing kibana, it seems like the server is struggling, may need more storage (currently using )
 - configure elasticsearch yaml config to have multiple nodes running off the same host 
 - deploy on ec2 t2.micro as a test and document steps needed for setup
 - create terraform infrastructure to host the elk stack and deploy to an instance there

@@ -8,7 +8,8 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-log*
-elastic*
-kibana*
+logstash-*
+elasticsearch-7*
+kibana-*
 terraform/.*
+.git*

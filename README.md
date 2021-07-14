@@ -21,3 +21,4 @@ To deply:
 - terraform 
 - an aws account
 - a unix terminal
+- Python v3.6 or later 
