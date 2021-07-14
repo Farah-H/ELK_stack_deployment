@@ -15,7 +15,14 @@ I'm not comfortable with ELK but the task is to **deploy** it. I don't need to k
     - steps on mac: 
         - download zip files 
         - unzip 
-        - cd into kibana directory and `bin/kibana` 
+        - cd into kibana directory and `bin/kibana` and do the same for elasticsearch
+        - **here I ran into some issues**:
+            - localhost not working (even though it has been fine for other projects)
+            - problems SSH into ec2 instance, going to try it from another computer as I think this one's firewall is blocking it.  
+    - going to try and run it straight from an ec2 instance: 
+        - my aws account doesn't have default vpcs anymore, need to bring up an infrastructure before I can run anything. 
+        - console is long & cumbersome, use terraform to bring up simple 1-tier architecture, public for now. 
+            - note no instance is created from the terraform script, need to do this manually in console to create an ssh key for other laptop. 
     - use commands.sh file to note and potentially automate any terminal commands
 - configure elasticsearch yaml config to have multiple nodes running off the same host 
 - deploy on ec2 t2.micro as a test and document steps needed for setup
